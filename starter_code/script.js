@@ -7,15 +7,13 @@ window.onload = function() {
 
   function startGame() {
 
-    // setInterval(function() {
-    //   if (frame == 801){
-    //     frame = 0
-    //   }
-    //   drawBackground()
-    //   frame += 1
-    // }, 10)
-
-    drawBackground()
+    setInterval(function() {
+      if (frame == 801){
+        frame = 0
+      }
+      drawBackground()
+      frame += 1
+    }, 10)
     
   }
 
