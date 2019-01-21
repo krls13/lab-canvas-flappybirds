@@ -6,14 +6,26 @@ window.onload = function() {
   function Player() {
     this.width = 50
     this.height = 50
-    this.playerX = 200
+    this.playerX = 100
     this.playerY = 275
     this.speedX 
     this.speedY
     this.gravity
     this.gravitySpeed
   }
+  var obstacle1 = {
+    width: 60,
+    height: 190,
+    x: 800,
+    y: 0,
+  }
+  var obstacle2 = {
+    width: 60,
+    height: 190,
+    x: 800,
+    y: 315
 
+  }
   var player = new Player();
   
   var backgroundCoords = 0
@@ -31,6 +43,7 @@ window.onload = function() {
 
       drawBackground()
       drawPlayer()
+      collision()
       backgroundCoords -= 1
     }, 10)
   }
@@ -81,4 +94,11 @@ window.onload = function() {
   }
 
   })
+  
+  function collision(){
+    if (player.playerX + player.width > backgroundCoords + obstacle1.x && player.playerY < obstacle1.y + obstacle1.height){
+      console.log("end game");
+    }
+    
+  }
 };
